@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-public class ClientController {
+@org.springframework.web.bind.annotation.RestController
+public class RestController {
 
     private final ClientService clientService;
 
     @Autowired
-    public ClientController(ClientService clientService) {
+    public RestController(ClientService clientService) {
         this.clientService = clientService;
     }
 
