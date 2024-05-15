@@ -5,6 +5,15 @@ public class CliAuth {
     private Integer id;
 
     public CliAuth() {}
+    private Integer b;
+
+    public Integer getB() {
+        return b;
+    }
+
+    public void setB(Integer b) {
+        this.b = b;
+    }
 
     private String password;
 

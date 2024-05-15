@@ -60,7 +60,6 @@ public class JustController {
     public String clientResult(@ModelAttribute Client client, Model model) {
 
 
-        client.setPassword(encryptThisString(client.getPassword()));
         clientService.create(client);
         ResponseEntity<?> n = new ResponseEntity<>(HttpStatus.CREATED);
         model.addAttribute("youcli",client);
@@ -78,7 +77,6 @@ public class JustController {
     @PostMapping("/login")
     public String authorized(@ModelAttribute CliAuth cliauth, Model model){
         int access = 0;
-        cliauth.setPassword(encryptThisString(cliauth.getPassword()));
         for (Client client: clientService.readAll()){
             if (Objects.equals(cliauth.getId(), client.getId()) &&
                     Objects.equals(cliauth.getPassword(), client.getPassword())) {
