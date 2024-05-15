@@ -10,6 +10,8 @@ import javax.persistence.*;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Client {
 
+    public Client() {}
+
     @Id
     @Column(name = "id")
     @SequenceGenerator(name = "clientsIdSeq", sequenceName = "clients_id_seq", allocationSize = 1)
@@ -21,6 +23,8 @@ public class Client {
     @Column(name = "email")
     private String email;
 
+    @Column(name = "password")
+    private String password;
     @Column(name = "phone")
     private String phone;
 
@@ -33,6 +37,15 @@ public class Client {
 
     public void setPoints(Integer points) {
         this.points = points;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Integer getId() {
