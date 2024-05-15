@@ -12,6 +12,15 @@ public class Client {
 
     public Client() {}
 
+    public Client(Integer id, String name, String email, String password, String phone, Integer points) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.points = points;
+    }
+
     @Id
     @Column(name = "id")
     @SequenceGenerator(name = "clientsIdSeq", sequenceName = "clients_id_seq", allocationSize = 1)

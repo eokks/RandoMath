@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Quicksand", sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #111;
+      width: 100%;
+      overflow: hidden;
+    }
+    .ring {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ring i {
+      position: absolute;
+      inset: 0;
+      border: 2px solid #fff;
+      transition: 0.5s;
+    }
+    .ring i:nth-child(1) {
+      border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+      animation: animate 6s linear infinite;
+    }
+    .ring i:nth-child(2) {
+      border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+      animation: animate 4s linear infinite;
+    }
+    .ring i:nth-child(3) {
+      border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+      animation: animate2 10s linear infinite;
+    }
+    .ring:hover i {
+      border: 6px solid var(--clr);
+      filter: drop-shadow(0 0 20px var(--clr));
+    }
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes animate2 {
+      0% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    .login {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .login h2 {
+      font-size: 2em;
+      color: #fff;
+    }
+    .login .inputBx {
+      position: relative;
+      width: 100%;
+
+      color:white ;
+      background-color: #111111;
+      border-color: black;
+    }
+    .login .inputBx input {
+      position: relative;
+      width: 100%;
+      padding: 12px 20px;
+
+      border: 2px solid black;
+      border-radius: 50px;
+      font-size: 1.2em;
+      box-shadow: none;
+      outline: none;
+
+      color:white ;
+      background-color: #111111;
+    }
+    .login .inputBx input[type="submit"] {
+      width: 100%;
+      background: #ffffff;
+      color: black;
+
+      border: none;
+      cursor: pointer;
+    }
+    .login .inputBx input[type="password"] {
+      color:white ;
+      background-color: #111111;
+      border-color: black;
+
+
+    }
+    .login .inputBx input[type="text"] {
+      color:white ;
+      background-color: #111111;
+      border-color: black;
+
+
+
+
+
+    }
+    .login .inputBx input::placeholder {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .login .links {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .login .links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<div class="ring">
+  <i style="--clr:#FFFFFF;"></i>
+  <i style="--clr:#bb511e;"></i>
+  <i style="--clr:#f8ac84;"></i>
+  <div class="login">
+    <h2>Login</h2>
+
+    <form action="#" th:action="@{/login}" th:object="${cliauth}" method="post">
+      <div class="inputBx">
+        <input type="text" th:field="*{id}" placeholder="Username">
+      </div>
+      <div class="inputBx">
+        <input type="password" id="ne smotrite code pudgalusta" th:field="*{password}" placeholder="Password">
+      </div>
+      <div class="inputBx">
+        <input type="submit" value="Sign in">
+      </div>
+    </form>
+
+    <div class="links">
+
+
+      <a href="/signup">Sign up</a>
+    </div>
+  </div>
+</div>
+<!--ring div ends here-->

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../disign.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.body{position: relative;
+
+        background-color: white;
+    }
+    #header{position: relative;
+        background-color: black;
+        display: block;
+        padding: 3%;
+        z-index: 3;
+        text-align: right;
+
+
+    }
+    #bodyer{position: relative;
+        display:block;
+        opacity: 1;
+
+
+    }
+    #owlimg{position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        filter: blur(6px);
+
+    }
+    #secondblock{
+        position:absolute;
+
+        background-color: black;
+        display:block;
+        opacity: 0.6;
+        padding-left: 100% ;
+        padding-right: 100%;
+        padding-top: 30%;
+        padding-bottom: 30%;
+        z-index: 2;
+    }
+    #firstblock{
+        position: relative;
+        z-index: 1;
+
+    }
+    #firdtblock{
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+        display:block;
+        color: #fff;
+    }
+    #divwthall{
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .but {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+
+
+    }
+    h1{
+        background-color: #fff;
+        position: absolute;
+
+        top:20%;
+
+        left: 0;
+
+        text-transform:capitalize;
+
+        color: white;
+
+        width: 100%;
+
+        background: none;
+        background-size: 0ch;
+
+        padding: 0;
+
+        text-align: center;
+        z-index: 4;
+    }</style>
+</head>
+<body>
+    
+    <div id="divwthall">
+        <div id="header">
+            <a href="/login" class="but">Авторизация</a>
+            <a href="/signup" class="but">Регистрация</a>
+        </div>
+        <div id="bodyer">
+
+
+            <div id="secondblock"></div>
+            <div  id="firstblock">
+                
+                <img id="owlimg" th:src="@{/images/owl.jpg}">
+            </div>
+            <h1>
+                LONDON. Michaelmas Term Lately Over, And The Lord Chancellor Sitting In Lincoln's Inn Hall.
+            </h1>
+            <h1></h1>
+            
+        </div>
+    </div>
+  
+    
+</body>
+</html>

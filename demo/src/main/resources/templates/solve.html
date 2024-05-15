@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            min-height: 100vh;
+            background: #111;
+            width: 100%;
+        }
+        *{
+            color: white;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        .jopa{
+            display: none;
+        }
+        #inp{
+            position: relative;
+            width: 50%;
+            height: 70px;
+            background: #111111;
+            border-bottom: 2px solid #bb511e;
+
+            font-size: 2em;
+            color: #BB511E;
+            box-shadow: none;
+            outline: none;
+        }
+        #button{
+
+            position: relative;
+            width: 50%;
+            height: 70px;
+            padding: 12px 20px;
+            background: black;
+            border: 2px solid black;
+            border-radius: 50px;
+            font-size: 2em;
+            color: #BB511E;
+            box-shadow: none;
+            outline: none;
+        }
+        #math{
+            width: 100%;
+            font-size: 3em;
+        }
+        .header {
+            padding: 30px;
+            background: black;
+            color: white;
+            font-size: 30px;
+        }
+        #left {
+            float: left;
+            position: relative;
+            width: 70%;
+            height: auto;
+            object-fit: fill;
+        }
+        #content {
+            margin-left: 80%;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <img id="left"  th:src="@{/images/RandoMath.png}">
+    <div id="content"><p th:text = "'Id: '+${cli.getId()}"></p></div>
+
+
+
+</div>
+    <p id="math" th:text = "${math}"></p>
+
+   <form action="#" th:action="@{/check}" th:object="${maththing}" method="post">
+
+        <p><input id="inp" type="number" name="answer" /></p>
+
+        <p class="jopa"><input type="text" name="c" th:value="${c}" /></p>
+        <p class="jopa"><input type="text" name="id" th:value="${cli.getId()}" /></p>
+        <p class="jopa"><input type="text" name="name" th:value="${cli.getName()}"/></p>
+        <p class="jopa"><input  type="text" name="points" th:value="${cli.getPoints()}"/></p>
+        <p class="jopa"><input type="password" name="password" th:value="${cli.getPassword()}"/></p>
+        <p class="jopa"><input type="text" name="email" th:value="${cli.getEmail()}"/></p>
+        <p class="jopa"><input  type="text" name="phone" th:value="${cli.getPhone()}"/></p>
+        <p><input id="button" type="submit" value="Submit" /> </p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .jopa{
+            display: none;
+        }
+        *{
+            color: white;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        body{
+            min-height: 100vh;
+            background: #111;
+            width: 100%;
+        }
+        .button{
+
+            position: relative;
+            width: 100%;
+            height: 80px;
+            padding: 12px 20px;
+            background: black;
+            border: 2px solid black;
+            border-radius: 50px;
+            font-size: 2em;
+            color: #BB511E;
+            box-shadow: none;
+            outline: none;
+        }
+        .header {
+            padding: 30px;
+            background: black;
+            color: white;
+            font-size: 30px;
+        }
+        #left {
+            float: left;
+            position: relative;
+            width: 70%;
+            height: auto;
+            object-fit: fill;
+        }
+        #content {
+            margin-left: 80%;
+            overflow: hidden;
+        }
+
+
+        h1{
+            color: #bb511e;
+        }
+
+        #l {
+            float: left;
+            width: 40%;
+        }
+        #right {
+            margin-left: 50%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img id="left"  th:src="@{/images/RandoMath.png}">
+    <div id="content"><p th:text = "'Id: '+${youcli.getId()}"></p>
+        <a href="/login">Log out</a>
+    </div>
+
+
+
+</div>
+<div id="l">
+    <h1 th:text = "'Welcome, '+${youcli.getName()}+'!'"></h1>
+
+    <h3 th:text = "'Password: '+${youcli.getPassword()}"></h3>
+    <h3 th:text = "'Name: '+${youcli.getName()}"></h3>
+    <h3 th:text = "'points: '+${youcli.getPoints()}"></h3>
+    <h3 th:text = "'Phone: '+${youcli.getPhone()}"></h3>
+    <h3 th:text = "'Email: '+${youcli.getEmail()}"></h3>
+
+</div>
+<div id="right">
+    <h1 th:text = "'Choose difficulty:'"></h1>
+    <form action="#" th:action="@{/easy}" th:object="${client}" method="post">
+
+    <p class="jopa"> <input type="text" name="id" th:value= "${youcli.getId()}"/> </p>
+    <p class = "jopa" > <input type="text" name="name" th:value= "${youcli.getName()}"/> </p>
+    <p class = "jopa" ><input  type="text" name="points" th:value= "${youcli.getPoints()}" /> </p>
+    <p class = "jopa"><input type="text" name="password" th:value= "${youcli.getPassword()}"/></p>
+    <p class = "jopa"><input type="text" name="email" th:value= "${youcli.getEmail()}"/></p>
+    <p class = "jopa "><input type="text" name="phone" th:value= "${youcli.getPhone()}"/></p>
+    <p><input class = "button" type="submit" value="easy" /> </p>
+
+
+</form>
+
+    <form action="#" th:action="@{/average}" th:object="${client}" method="post">
+
+    <p class="jopa"> <input type="text" name="id" th:value= "${youcli.getId()}"/> </p>
+    <p class = "jopa" > <input type="text" name="name" th:value= "${youcli.getName()}"/> </p>
+    <p class = "jopa" ><input  type="text" name="points" th:value= "${youcli.getPoints()}" /> </p>
+    <p class = "jopa"><input type="text" name="password" th:value= "${youcli.getPassword()}"/></p>
+    <p class = "jopa"><input type="text" name="email" th:value= "${youcli.getEmail()}"/></p>
+    <p class = "jopa "><input type="text" name="phone" th:value= "${youcli.getPhone()}"/></p>
+    <p><input class = "button" type="submit" value="average" /> </p>
+
+
+</form>
+
+    <form action="#" th:action="@{/hard}" th:object="${client}" method="post">
+
+    <p class="jopa"> <input type="text" name="id" th:value= "${youcli.getId()}"/> </p>
+    <p class = "jopa" > <input type="text" name="name" th:value= "${youcli.getName()}"/> </p>
+    <p class = "jopa" ><input  type="text" name="points" th:value= "${youcli.getPoints()}" /> </p>
+    <p class = "jopa"><input type="text" name="password" th:value= "${youcli.getPassword()}"/></p>
+    <p class = "jopa"><input type="text" name="email" th:value= "${youcli.getEmail()}"/></p>
+    <p class = "jopa "><input type="text" name="phone" th:value= "${youcli.getPhone()}"/></p>
+    <p><input class = "button" type="submit" value="hard" /> </p>
+
+
+</form>
+</div>
+</body>
+</html>
